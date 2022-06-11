@@ -1,0 +1,12 @@
+sudo apt update && sudo apt upgrade
+sudo apt install nmap tcptraceroute python3 python3-venv zsh man wget curl gnupg -y
+chsh -s $(which zsh)
+mkdir "${HOME}/code"
+mkdir "${HOME}/scripts"
+git clone https://github.com:tomasr/molokai.git "${HOME}/code/molokai"
+git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+mkdir -p "${HOME}/.vim/colors"
+ln -s "${HOME}/code/molokai/colors/molokai.vim" "${HOME}/.vim/colors"
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-389.0.0-linux-x86_64.tar.gz -P "${HOME}/tmp"
+tar -xf "${HOME}/tmp/google-cloud-cli-389.0.0-linux-x86_64.tar.gz" -C "${HOME}"
+${HOME}/google-cloud-sdk/install.sh -q
