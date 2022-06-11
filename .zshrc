@@ -9,6 +9,7 @@ alias python="python3"
 alias editz="vim ~/.zshrc"
 alias reloadz="source ~/.zshrc"
 alias activate="source env/bin/activate"
+alias venv="python -m venv env"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
