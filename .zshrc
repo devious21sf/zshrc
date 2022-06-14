@@ -10,6 +10,14 @@ alias editz="vim ~/.zshrc"
 alias reloadz="source ~/.zshrc"
 alias activate="source env/bin/activate"
 alias venv="python -m venv env"
+alias build_image='docker build -t dev_image ~/code/dev_container'
+alias build_container='docker run -it -v "/Users/martinezr/code:/home/dev21/code" \
+                                -v "/Users/martinezr/scripts:/home/dev21/scripts" \
+                                --name dev_container dev_image zsh'
+alias start_container='docker start -i dev_container'
+#alias container_stop='docker stop dev_container'
+alias remove_container="docker container rm dev_container"
+alias remove_image="docker image rm dev_image"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
@@ -63,7 +71,7 @@ SPACESHIP_PROMPT_ORDER=(
   pyenv         # Pyenv section
   dotnet        # .NET section
   ember         # Ember.js section
-  kubectl	# Kubectl context section
+  kubectl	    # Kubectl context section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
