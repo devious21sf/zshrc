@@ -11,8 +11,8 @@ alias reloadz="source ~/.zshrc"
 alias activate="source env/bin/activate"
 alias venv="python -m venv env"
 alias build_image='docker build -t dev_image ~/code/dev_container'
-alias build_container='docker run -it -v "/Users/martinezr/code:/home/dev21/code" \
-                                -v "/Users/martinezr/scripts:/home/dev21/scripts" \
+alias build_container='docker run -it -v "$HOME/code:/home/dev21/code" \
+                                -v "$HOME/scripts:/home/dev21/scripts" \
                                 --name dev_container dev_image zsh'
 alias start_container='docker start -i dev_container'
 #alias container_stop='docker stop dev_container'
